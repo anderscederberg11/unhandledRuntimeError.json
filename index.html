@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unhandledRuntimeError.json</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="main">
+        <h1></h1>
+        <button class="click-me">click me bruh</button>
+    </div>
+    <div class="names">
+        <a href="Anders/anders.html"><button class="andersButton">anders</button></a>
+        <button class="henverButton">henver</button>
+        <button class="sebButton">seb</button>
+    </div>
+    <div class="sign-up-container">
+        <h1></h1>
+        <form class="sign-up-form">
+            <input type="text" class="name">
+            <input type="text" class="email">
+            <h3>terms and conditions</h3>
+                <p class="terms">
+                    1. by engaging with this document, you agree to relinquish your ability to whistle underwater.
+                    2. you must wear a monocle while reading these terms and conditions on alternate Tuesdays.
+                    3. in the event of a dispute, all parties involved must engage in a game of competitive spoon balancing.
+                    4. users must solemnly swear to never speak of pineapples in the presence of penguins.
+                    5. any unauthorized attempts to perform interpretive dance based on these terms and conditions will result in immediate expulsion from the moon.
+                    6. you are forbidden from naming your pet goldfish after any Roman emperor.
+                    7. all users are required to communicate solely through interpretive dance for the duration of their subscription.
+                    8. under no circumstances should you attempt to engage in a staring contest with a particularly menacing houseplant.
+                    9. by proceeding, you grant us the right to randomly rearrange the furniture in your dreams.
+                    10. users must agree to paint their left thumbnail neon green every third Wednesday.
+                    11. any instances of spontaneous jazz hands will be met with severe penalties.
+                    12. It is strictly prohibited to address customer service representatives by anything other than their chosen superhero alter ego.
+                    13. By accepting these terms and conditions, you acknowledge that your toaster may develop sentient tendencies.
+                    14. Users must sacrifice a peanut butter and jelly sandwich to the intergalactic overlords every lunar eclipse.
+                    15. You agree to wear socks on your hands while typing any correspondence related to this agreement.
+                    16. Failure to adhere to these terms and conditions will result in the immediate summoning of a swarm of overly enthusiastic otters.
+                    17. Users must submit to a mandatory annual evaluation of their ability to recite Shakespearean insults backwards.
+                    18. You are prohibited from making eye contact with the moon during odd-numbered days of the month.
+                    19. In the event of a power outage, users are required to communicate via carrier pigeon until normal service is restored.
+                    20. Any attempts to communicate with extraterrestrial life forms must be conducted using interpretive dance and kazoo accompaniment.
+                </p>
+                <h6></h6>
+            <input type="checkbox" class="checkbox">
+        </form>
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const getStartedButton = document.querySelector('.click-me');
+            getStartedButton.addEventListener('click', function() {
+                const parentDiv = this.parentElement;
+                parentDiv.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

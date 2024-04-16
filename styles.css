@@ -1,0 +1,38 @@
+.body {
+    font-family: monaco;
+    color: white;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-family: monaco;
+    color: white;
+    font-size: 300px;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.names{
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.click-me {
+    display: none;
+}
+
+.checkbox{
+    transform: scale(20);
+}
