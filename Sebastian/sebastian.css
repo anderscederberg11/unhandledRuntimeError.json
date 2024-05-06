@@ -1,0 +1,54 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+#video-container {
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+#youtube-video {
+    display:none;
+    position: absolute;
+}
+
+.firstSection, .secondSection{
+    width:100%;
+}
+
+.pageLeaving{
+    top:0;
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    background-color: white;
+}
+
+h1{
+    color: black;
+    background-color: none;
+    font-size: 200px;
+}
+
+.opacityButton{
+    z-index: 1;
+    opacity: 1;
+    position:fixed;
+    bottom:0;
+    right: 0;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    width:200px;
+    height: 30px;
+}
+
+.henverVideo{
+    width:100%;
+}
