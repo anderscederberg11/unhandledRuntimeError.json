@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <div id="video-player" onclick="playVideo()">
+      <!-- Placeholder text -->
+      <p>Click to play video</p>
+    </div>
+  
+    <!-- JavaScript to play the video -->
+    <script>
+        function playVideo() {
+          // Replace the video URL with the URL of the .mov file you want to play
+          var videoUrl = "/Henver/imgs/RPReplay_Final1715042327.mov";
+          // Create a video element
+          var videoElement = document.createElement("video");
+          // Set attributes for the video element
+          videoElement.src = videoUrl;
+          videoElement.controls = true;
+          videoElement.autoplay = true;
+          // Replace the content of the video player div with the video element
+          document.getElementById("video-player").innerHTML = "";
+          document.getElementById("video-player").appendChild(videoElement);
+        }
+      </script>
+  </body>
+</html>

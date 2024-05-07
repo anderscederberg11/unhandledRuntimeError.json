@@ -12,57 +12,300 @@
     </style>
 </head>
 <body class="body">
-    <div class="main">
-        <h1></h1>
-        <button class="click-me">click me bruh</button>
+    <div class="music">
+        <audio class="walter" autoplay loop>
+            <source src="audio/walter.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+        <audio class="boom">
+            <source src="audio/boom.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+        <audio class="cock">
+            <source src="audio/cock.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+        <audio class="shot">
+            <source src="audio/gunshot.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+        <audio class="better-off" loop>
+            <source src="audio/Better Off Alone.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
     </div>
-    <div class="names">
-        <a href="Anders/anders.html"><button class="andersButton">anders</button></a>
-        <button class="henverButton">henver</button>
-        <button class="sebButton">seb</button>
-    </div>
-    <div class="sign-up-container">
-        <h1></h1>
-        <form class="sign-up-form">
-            <input type="text" class="name">
-            <input type="text" class="email">
-            <h3>terms and conditions</h3>
-                <p class="terms">
-                    1. by engaging with this document, you agree to relinquish your ability to whistle underwater.
-                    2. you must wear a monocle while reading these terms and conditions on alternate Tuesdays.
-                    3. in the event of a dispute, all parties involved must engage in a game of competitive spoon balancing.
-                    4. users must solemnly swear to never speak of pineapples in the presence of penguins.
-                    5. any unauthorized attempts to perform interpretive dance based on these terms and conditions will result in immediate expulsion from the moon.
-                    6. you are forbidden from naming your pet goldfish after any Roman emperor.
-                    7. all users are required to communicate solely through interpretive dance for the duration of their subscription.
-                    8. under no circumstances should you attempt to engage in a staring contest with a particularly menacing houseplant.
-                    9. by proceeding, you grant us the right to randomly rearrange the furniture in your dreams.
-                    10. users must agree to paint their left thumbnail neon green every third Wednesday.
-                    11. any instances of spontaneous jazz hands will be met with severe penalties.
-                    12. It is strictly prohibited to address customer service representatives by anything other than their chosen superhero alter ego.
-                    13. By accepting these terms and conditions, you acknowledge that your toaster may develop sentient tendencies.
-                    14. Users must sacrifice a peanut butter and jelly sandwich to the intergalactic overlords every lunar eclipse.
-                    15. You agree to wear socks on your hands while typing any correspondence related to this agreement.
-                    16. Failure to adhere to these terms and conditions will result in the immediate summoning of a swarm of overly enthusiastic otters.
-                    17. Users must submit to a mandatory annual evaluation of their ability to recite Shakespearean insults backwards.
-                    18. You are prohibited from making eye contact with the moon during odd-numbered days of the month.
-                    19. In the event of a power outage, users are required to communicate via carrier pigeon until normal service is restored.
-                    20. Any attempts to communicate with extraterrestrial life forms must be conducted using interpretive dance and kazoo accompaniment.
-                </p>
-                <h6></h6>
-            <input type="checkbox" class="checkbox">
-        </form>
-    </div>
-    
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const getStartedButton = document.querySelector('.click-me');
-            getStartedButton.addEventListener('click', function() {
-                const parentDiv = this.parentElement;
-                parentDiv.classList.add('hidden');
+            const audioPlayer = document.getElementsByClassName("walter")[0];
+
+            
+            audioPlayer.volume = 0.4;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeButton = document.querySelector('.close');
+            const backgroundImage = document.querySelector('.no');
+            const boomAudio = document.querySelector('.boom')
+            
+            closeButton.addEventListener('click', function() {
+                // Show the background image
+                backgroundImage.style.opacity = '1';
+                backgroundImage.style.zIndex = '1';
+                
+                // Move the background image up for a few seconds
+                setTimeout(function() {
+                    backgroundImage.style.opacity = '0';
+                    backgroundImage.style.zIndex = '-1';
+                }, 2000);
+                boomAudio.play(); // Adjust the duration as needed (in milliseconds)
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkBox = document.querySelector('.checkbox');
+            const cockAudio = document.querySelector('.cock');
+            const proceedButton = document.querySelector('.submit');
+
+            checkBox.addEventListener('change', function() {
+                if (this.checked) {
+                    cockAudio.play();
+                    proceedButton.style.opacity = '1';
+                    proceedButton.style.display = 'block';
+                    checkBox.style.marginRight = '17%';
+                } else {
+                    proceedButton.style.display = 'none';
+                    proceedButton.style.opacity = '0';
+                    checkBox.style.marginRight = '50%';
+
+                }
+            })
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const proceedButton = document.querySelector('.submit');
+            const shotAudio = document.querySelector('.shot');
+            const signUp = document.querySelector('.sign-up-container');
+            const audioPlayer = document.querySelector('.walter');
+            const betterPlayer = document.querySelector('.better-off');
+            const discoBall = document.querySelector('.disco');
+            const nameContainer = document.querySelector('.pages-container')
+
+            proceedButton.addEventListener('click', function() {
+                shotAudio.play();
+                signUp.style.display = 'none';
+                audioPlayer.pause();
+                betterPlayer.play();
+                discoBall.style.opacity = '1';
+                nameContainer.style.display = 'flex';
+            })
+        })
+    </script>
+    <img src="images/no.png" class="no"> 
+    <div class="sign-up-container">
+        <div class="arrows">
+            <div class="arrows"><img src="images/arrows.png" alt="arrows" class="both-arrows"><h6 class="one-of-one">1 of 1 unhandled error</h6><img src="images/close.png" alt="X" class="close"></div>
+        </div>
+        <div class="pre-form-text">
+                <h2 class="unhandled-text">Unhandled Runtime Error</h2>
+                <h3 class="error-text">TypeError: Cannot read property 'bruh' of undefined</h3>
+                <h2 class="source">Source</h2>
+        </div>
+        <div class="sign-up-form">
+            <h4 class="form-header">../../what/the-sigma.js (289:20) @ register</h4>
+            <div class="line"></div>
+            <p class="code-text"> <span class="gray">10 |</span><br>
+                <span class="gray">11 |</span> <span class="blue">export default function</span><span class="yellow"> Sign-Up</span>() {<br>
+                <span class="reposition"><span class="red">></span> <span class="gray">12 |</span> cons [currentTask<span class="yellow">,</span> pleaseEnterYourName] <span class="yellow">= () => <input type="text" class="name"></span> useState(<span class="purple">1</span>)<span class="yellow">;</span><br></span>
+                <span class="gray"></span><span class="black">...</span><span class="gray">|</span><span class="red">^</span><br>
+                <span class="gray">13 |</span> <span class="blue">const</span> [showQuestionOne<span class="yellow">,</span> pleaseEnterYourCreditCardNumber] <span class="yellow">= () => <input type="text" class="credit"></span><span class="yellow">;</span><br>
+                <span class="gray">14 |</span> <span class="blue">const</span> [showQuestionTwo<span class="yellow">,</span> expirationAndSecurityCode] <span class="yellow">= () => <input type="text" class="expiration-cvv">   <input type="text" class="expiration-cvv"></span> useState(<span class="blue">false</span>)<span class="yellow">;</span><br>
+                <span class="gray">15 |</span> <span class="blue">const</span> [showQuestionThree <span class="yellow">,</span> pleaseEnterYourSocialInsuranceNumber] <span class="yellow">= () => <input type="text" class="name"></span><span class="yellow">;</span></p>
+        </div>
+        <div class="terms-container">
+            <h2 class="terms">Terms & Conditions:</h2>
+                <div class="terms-scroll-box">
+                    <p class="terms-text">1. by engaging with this document, you agree to relinquish your ability to whistle underwater.<br>
+                        2. you must wear a monocle while reading these terms and conditions on alternate Tuesdays.<br>
+                        3. in the event of a dispute, all parties involved must engage in a game of competitive spoon balancing.<br>
+                        4. users must solemnly swear to never speak of pineapples in the presence of penguins.<br>
+                        5. any unauthorized attempts to perform interpretive dance based on these terms and conditions will result in immediate expulsion from the moon.<br>
+                        6. you are forbidden from naming your pet goldfish after any Roman emperor.<br>
+                        7. all users are required to communicate solely through interpretive dance for the duration of their subscription.<br>
+                        8. under no circumstances should you attempt to engage in a staring contest with a particularly menacing houseplant.<br>
+                        9. by proceeding, you grant us the right to randomly rearrange the furniture in your dreams.<br>
+                        10. users must agree to paint their left thumbnail neon green every third Wednesday.<br>
+                        11. any instances of spontaneous jazz hands will be met with severe penalties.<br>
+                        12. it is strictly prohibited to address customer service representatives by anything other than their chosen superhero alter ego.<br>
+                        13. by accepting these terms and conditions, you acknowledge that your toaster may develop sentient tendencies.<br>
+                        14. users must sacrifice a peanut butter and jelly sandwich to the intergalactic overlords every lunar eclipse.<br>
+                        15. you agree to wear socks on your hands while typing any correspondence related to this agreement.<br>
+                        16. failure to adhere to these terms and conditions will result in the immediate summoning of a swarm of overly enthusiastic otters.<br>
+                        17. users must submit to a mandatory annual evaluation of their ability to recite Shakespearean insults backwards.<br>
+                        18. you are prohibited from making eye contact with the moon during odd-numbered days of the month.<br>
+                        19. in the event of a power outage, users are required to communicate via carrier pigeon until normal service is restored.<br>
+                        20. any attempts to communicate with extraterrestrial life forms must be conducted using interpretive dance and kazoo accompaniment.</p>
+                </div>
+        </div>
+        <div class="accept-container">
+            <h1 class="accept">Do You<br>Accept Bro?</h1>
+            <input type="checkbox" class="checkbox">
+            <button type="submit" class="submit">PROCEED</button>
+        </div>
+    </div>
+    <div class="video-container">
+        <video autoplay muted loop class="disco">
+            <source src="video/Spinning Pink Colorful  Disco Ball Vj Loop - Disco Ball Animation Party Background.mp4">
+        </video>
+    </div>
+    <div class="pages-container">
+        <div class="henver-container">
+            <h1 class="henver-header">HENVER</h1>
+            <video muted loop class="henver-dance">
+                <source src="video/henverdance.mp4"> 
+            </video>
+        </div>
+        <div class="seb-container">
+            <h1 class="seb-header">SEBASTIAN</h1>
+            <video muted loop class="seb-dance">
+                <source src="video/sebdance.mp4"> 
+            </video>
+        </div>
+        <div class="anders-container">
+            <h1 class="anders-header">ANDERS</h1>
+            <video muted loop class="anders-dance">
+                <source src="video/andersdance.mp4"> 
+            </video>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const henverContain = document.querySelector('.henver-container');
+            const henverDance = document.querySelector('.henver-dance');
+            const henverText = document.querySelector('.henver-header');
+
+                henverContain.addEventListener('mouseenter', function() {
+                henverText.style.transform = 'scale(1.6)';
+                henverDance.play(); // Scale up the text
+            });
+
+                henverContain.addEventListener('mouseleave', function() {
+                henverText.style.transform = 'scale(1)';
+            });
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sebContain = document.querySelector('.seb-container');
+            const sebDance = document.querySelector('.seb-dance');
+            const sebText = document.querySelector('.seb-header');
+
+                sebContain.addEventListener('mouseenter', function() {
+                sebText.style.transform = 'scale(1.4)';
+                sebDance.play(); // Scale up the text
+            });
+
+                sebContain.addEventListener('mouseleave', function() {
+                sebText.style.transform = 'scale(1)';
+            });
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const andersContain = document.querySelector('.anders-container');
+            const andersDance = document.querySelector('.anders-dance');
+            const andersText = document.querySelector('.anders-header');
+
+                andersContain.addEventListener('mouseenter', function() {
+                andersText.style.transform = 'scale(1.4)';
+                andersDance.play(); // Scale up the text
+            });
+
+                andersContain.addEventListener('mouseleave', function() {
+                andersText.style.transform = 'scale(1)';
+            });
+        })
+    </script>
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            // Get the coordinates of the mouse pointe
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Get the position of the text
+            const henverHeader = document.querySelector('.henver-header');
+            const headerRect = henverHeader.getBoundingClientRect();
+            const headerX = headerRect.left + headerRect.width / 2;
+            const headerY = headerRect.top + headerRect.height / 2;
+
+            // Calculate the distance between the mouse pointer and the text center
+            const distance = Math.sqrt((mouseX - headerX) ** 2 + (mouseY - headerY) ** 2);
+
+            // Update the text color based on the distance
+            const maxDistance = Math.sqrt(headerRect.width ** 2 + headerRect.height ** 2);
+            const scaleFactor = Math.min(1, distance / maxDistance); // Ensure scaleFactor is between 0 and 1
+            const blueValue = Math.round(255 * scaleFactor);
+            const whiteValue = 255 - blueValue; // Calculate inverse value for white color component
+            henverHeader.style.color = `rgb(255, ${whiteValue}, ${blueValue})`; // Change to blue with white component inversely proportional
+        });
+    </script>
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            // Get the coordinates of the mouse pointe
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Get the position of the text
+            const sebHeader = document.querySelector('.seb-header');
+            const headerRect = sebHeader.getBoundingClientRect();
+            const headerX = headerRect.left + headerRect.width / 2;
+            const headerY = headerRect.top + headerRect.height / 2;
+
+            // Calculate the distance between the mouse pointer and the text center
+            const distance = Math.sqrt((mouseX - headerX) ** 2 + (mouseY - headerY) ** 2);
+
+            // Update the text color based on the distance
+            const maxDistance = Math.sqrt(headerRect.width ** 2 + headerRect.height ** 2);
+            const scaleFactor = Math.min(1, distance / maxDistance); // Ensure scaleFactor is between 0 and 1
+            const blueValue = Math.round(255 * scaleFactor);
+            const whiteValue = 255 - blueValue; // Calculate inverse value for white color component
+            sebHeader.style.color = `rgb(255, ${whiteValue}, ${blueValue})`; // Change to blue with white component inversely proportional
+        });
+    </script>
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            // Get the coordinates of the mouse pointe
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Get the position of the text
+            const andersHeader = document.querySelector('.anders-header');
+            const headerRect = andersHeader.getBoundingClientRect();
+            const headerX = headerRect.left + headerRect.width / 2;
+            const headerY = headerRect.top + headerRect.height / 2;
+
+            // Calculate the distance between the mouse pointer and the text center
+            const distance = Math.sqrt((mouseX - headerX) ** 2 + (mouseY - headerY) ** 2);
+
+            // Update the text color based on the distance
+            const maxDistance = Math.sqrt(headerRect.width ** 2 + headerRect.height ** 2);
+            const scaleFactor = Math.min(1, distance / maxDistance); // Ensure scaleFactor is between 0 and 1
+            const blueValue = Math.round(255 * scaleFactor);
+            const whiteValue = 255 - blueValue; // Calculate inverse value for white color component
+            andersHeader.style.color = `rgb(255, ${whiteValue}, ${blueValue})`; // Change to blue with white component inversely proportional
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const andersContainer = document.getElementsByClassName('anders-container')[0]; // Get the first element with class 'anders-container'
+    
+            andersContainer.addEventListener('click', function() {
+                window.location.href = 'Anders/anders.html'; // Correct path to 'anders.html'
+            });
+        });
+    </script>
+    
 </body>
 </html>

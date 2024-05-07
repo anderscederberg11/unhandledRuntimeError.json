@@ -1,0 +1,6 @@
+#video-player {
+    width: 640px;
+    height: 360px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }

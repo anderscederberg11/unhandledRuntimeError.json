@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <h1>Welcome to the Interactive Page</h1>
+    <p>Click the button to make all buttons disappear and watch a video!</p>
+    <button id="hide-buttons-btn" onclick="hideButtons()">Hide Buttons</button>
+
+    <div id="video-container">
+        <video controls autoplay>
+            <source src="your_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <audio id="bg-music" src="your_music.mp3" loop></audio>
+
+    <h2>Mini Game</h2>
+    <!-- Your mini game goes here -->
+    <p>Congratulations! You've completed the mini game!</p>
+    <p>Thank you for playing. You will be redirected to the home page shortly...</p>
+
+    <script>
+        function hideButtons() {
+            var buttons = document.querySelectorAll('button');
+            buttons.forEach(function(button) {
+                button.style.display = 'none';
+            });
+
+            var videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'block';
+
+            var bgMusic = document.getElementById('bg-music');
+            bgMusic.play();
+        }
+
+        // Here you can implement your mini game logic and redirect the user to the home page
+        setTimeout(function() {
+            // Redirect to home page after 5 seconds (5000 milliseconds)
+            window.location.href = "home.html";
+        }, 5000);
+    </script>
+</body>
+</html>
