@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <div class="square"></div>
+    <div class="message">Hello, Vrother</div>
+</body>
+<script>
+    let square = document.querySelector('.square');
+    let message = document.querySelector('.message');
+
+    document.addEventListener('mousemove', (e) => {
+        let x = e.clientX;
+        let y = e.clientY;
+        let squareX = Math.random()
+        (window.innerWidth - 50);
+        let squareY = Math.random()
+        (window.innerHeight - 50);
+
+        if (squareX < x + 50 && squareX + 50 > x && sqaureY < y + 50 && sqaureY + 50 > y)
+        {
+            sqaureX = x + 50;
+            squareY = y + 50;
+        }
+
+        square.style.top = `${squareY}px`;
+        square.style.display = `${squareX}px`;
+    });
+
+    setTimeout(() => {
+        square.style.display = 'none';
+        message.style.display = 'block'
+    }, 5000);
+</script>
+</html>

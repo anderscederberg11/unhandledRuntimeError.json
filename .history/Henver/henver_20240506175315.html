@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <div id="video-player" onclick="playVideo()">
+        <img id="video-thumbnail" src="/Henver/imgs/steeevveee.png" alt="Steve lacy">
+      </div>
+  
+
+    <script>
+        function playVideo() {
+          var videoUrl = "/Henver/imgs/millk.mp4";
+          var videoElement = document.createElement("video");
+          // Set attributes for the video element
+          videoElement.src = videoUrl;
+          videoElement.controls = true;
+          videoElement.autoplay = true;
+          // Replace the content of the video player div with the video element
+          document.getElementById("video-player").innerHTML = "";
+          document.getElementById("video-player").appendChild(videoElement);
+        }
+      </script>
+  </body>
+</html>

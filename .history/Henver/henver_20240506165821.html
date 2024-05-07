@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+
+<img id="floating-image" src="your_image_url_here" alt="Floating Image">
+
+<div id="message-container">
+    <p>Here's your message!</p>
+    <button onclick="reset()">Reset</button>
+</div>
+
+<script>
+    var floatingImage = document.getElementById("floating-image");
+    var messageContainer = document.getElementById("message-container");
+
+    function floatImage() {
+        var x = Math.random() * (window.innerWidth - floatingImage.clientWidth);
+        var y = Math.random() * (window.innerHeight - floatingImage.clientHeight);
+        floatingImage.style.left = x + "px";
+        floatingImage.style.top = y + "px";
+    }
+
+
+    document.addEventListener("mousemove", function(event) {
+        floatImage();
+    });
+
+
+    setTimeout(function() {
+        setTimeout(function() {
+            floatingImage.style.display = "none";
+            messageContainer.style.display = "block";
+        }, 3000); 
+    }, 5000);
+
+
+    function reset() {
+        floatingImage.style.display = "block";
+        messageContainer.style.display = "none";
+    }
+</script>
+</html>

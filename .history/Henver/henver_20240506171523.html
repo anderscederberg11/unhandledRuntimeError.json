@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+
+    <div id="avoid">
+      <img src="your-image-url" alt="Avoid Cursor">
+    </div>
+    
+    <div id="message">
+      <p>Here's a message!</p>
+    </div>
+    
+    <div id="button-container">
+      <button id="play-video">Play Video</button>
+    </div>
+    
+    <div id="funny-ux">
+      Hello, Vrother. Video?
+    </div>
+    
+    <div id="redirect-button">
+      <button onclick="redirectToHomepage()">Homepage</button>
+    </div>
+    
+    <script>
+      // Avoid the cursor
+      document.addEventListener('mousemove', function(e) {
+        const avoid = document.getElementById('avoid');
+        avoid.style.top = e.clientY + 'px';
+        avoid.style.left = e.clientX + 'px';
+      });
+    
+      // Show message and button after 5 seconds
+      setTimeout(function() {
+        document.getElementById('message').style.display = 'block';
+        document.getElementById('button-container').style.display = 'block';
+      }, 5000);
+    
+      // Play video for 7 seconds when button is clicked
+      document.getElementById('play-video').addEventListener('click', function() {
+        const video = document.createElement('video');
+        video.src = 'your-video-url';
+        video.autoplay = true;
+        video.controls = true;
+        document.body.appendChild(video);
+        setTimeout(function() {
+          video.remove();
+          document.getElementById('funny-ux').style.display = 'block';
+          document.getElementById('redirect-button').style.display = 'block';
+        }, 7000);
+      });
+    
+      // Redirect to homepage after 6 seconds
+      function redirectToHomepage() {
+        // Replace 'homepage-url' with the actual URL of your homepage
+        window.location.href = 'homepage-url';
+      }
+    </script>
+    
+    </body>
+</html>

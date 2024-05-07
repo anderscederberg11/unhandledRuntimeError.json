@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <!-- Fake navigation bar / header -->
+    <nav>
+        <h1><img src="/Henver/imgs/Henver-Hub.png" alt="HenverHub Logo"></h1>
+    </nav>
+
+    <div id="video-container">
+        <div id="video-player" onclick="playVideo()">
+            <img id="video-thumbnail" src="https://pyxis.nymag.com/v1/imgs/339/66b/97b57ca1b6454d02f6a2fb37fb8ed69ced-Q347-RME-TheCutxIceSpice-002-05-FNL.2x.rsocial.w600.jpg" alt="Ice Spice">
+        </div>
+        <button id="redirect-button" onclick="redirectToAnotherPage()">Go to another page</button>
+    </div>
+
+    <script>
+        function playVideo() {
+            var videoUrl = "/Henver/imgs/dog.mp4";
+            var videoElement = document.createElement("video");
+            videoElement.src = videoUrl;
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            document.getElementById("video-player").innerHTML = "";
+            document.getElementById("video-player").appendChild(videoElement);
+        }
+
+        function redirectToAnotherPage() {
+            window.location.href = "/Henver/henver2.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#header {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.video {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+}
+.video img {
+    width: 100%;
+}
+.video h2 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+.video p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
