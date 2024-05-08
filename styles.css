@@ -14,6 +14,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0vw;
+
 }
 
 .main{
@@ -397,6 +398,7 @@
     width: 150%;
     opacity: 0.9;
     transition: ease-in-out 0.5s;
+    /* it is messed up in diff screen size */
 }
 
 .anders-header {

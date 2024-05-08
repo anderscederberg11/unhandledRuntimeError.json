@@ -1,12 +1,12 @@
+// let currentOpacity = parseFloat(localStorage.getItem('currentOpacity')) || 1; // Get current opacity from local storage or set it to 1
 // let opacityAnimationRunning = true; // Initially set to true to start the countdown animation
-// let currentOpacity = 1; // Initial opacity
 
 // function pageGone() {
 //     const byeByePage = document.querySelector('.pageLeaving');
 //     const intervalId = setInterval(() => {
 //         byeByePage.style.opacity = currentOpacity.toFixed(2);
-//         console.log(currentOpacity.toFixed(2));
 //         currentOpacity -= 0.01; // Decrement by 0.01 to reduce opacity
+//         localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage
 //         if (currentOpacity < -0.01) { // Stop when opacity reaches 0
 //             clearInterval(intervalId);
 //             opacityAnimationRunning = false; // Set the flag to false when animation ends
@@ -25,12 +25,13 @@
 //         currentOpacity = 1; // Ensure opacity doesn't exceed 1
 //     }
 //     byeByePage.style.opacity = currentOpacity;
+//     localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage so that it dont reset on refresh
 //     console.log('New opacity:', currentOpacity);
 
 //     // If animation is not running, start animation from the new opacity
 //     if (!opacityAnimationRunning) {
 //         pageGone();
-//         opacityAnimationRunning = true; // Set the flag to true
+//         opacityAnimationRunning = true;
 //     }
 // }
 
@@ -57,54 +58,23 @@ function getRandomNumber(min, max) {
 }
 //------------------------------------------
 
-function checkLength(length,girth){
-    if (length >= 8 && length <= 15 && girth > 2 && length > girth) {
-        return `yous a regular big boy with a ${length} incher and ${girth} girther`;
-    } else if(girth <= 2 && length !== girth && length > 3) {
-        return `yous have a pencil with dimensions ${length} inches by ${girth} inches lmao`
-    } else if( length === girth) {
-        return `yous have a stub with dimensions ${length} inches by ${girth} inches lmao`
-    } else if( length < girth && length > 3) {
-        return `yous have a chode with a ${length} incher and ${girth} widther lmao`;
-    } else if( length >= 16 && length > girth) {
-        return `yous have won in the life lottery with that regular ${length} incher and ${girth} inch girther`
-    } else if( length > girth && Math.abs(length - girth) === 2) {
-        return `dude you have a ${length} incher and a ${girth} inch girther. your girth is getting real cose `
-    } else if( length >= 16 && length < girth) {
-        return `dude what the fuck how is this possible you have a ${length} incher which is cracked but a ${girth} inch girther??`
-    } else {
-        return `yous a small boy with a ${length} incher and ${girth} widther. Get bigger`;
-    }
-}
-console.log(checkLength(Math.floor(Math.random() * 17),Math.floor(Math.random() * 21)))
-
-
-// const byeByePage = document.getElementsByClassName('pageLeaving');
-// byeByePage.style.opacity = 0;
-
-// function pageGone() {
-//     let i = 0;
-//     const intervalId = setInterval(() => {
-//         console.log(i.toFixed(2));
-//         i += 0.01;
-//         if (i >= 1) {
-//             clearInterval(intervalId);
-//         }
-//     }, 1000);
+// function checkLength(length,girth){
+//     if (length >= 8 && length <= 15 && girth > 2 && length > girth) {
+//         return `yous a regular big boy with a ${length} incher and ${girth} girther`;
+//     } else if(girth <= 2 && length !== girth && length > 3) {
+//         return `yous have a pencil with dimensions ${length} inches by ${girth} inches lmao`
+//     } else if( length === girth) {
+//         return `yous have a stub with dimensions ${length} inches by ${girth} inches lmao`
+//     } else if( length < girth && length > 3) {
+//         return `yous have a chode with a ${length} incher and ${girth} widther lmao`;
+//     } else if( length >= 16 && length > girth) {
+//         return `yous have won in the life lottery with that regular ${length} incher and ${girth} inch girther`
+//     } else if( length > girth && Math.abs(length - girth) === 2) {
+//         return `dude you have a ${length} incher and a ${girth} inch girther. your girth is getting real cose `
+//     } else if( length >= 16 && length < girth) {
+//         return `dude what the fuck how is this possible you have a ${length} incher which is cracked but a ${girth} inch girther??`
+//     } else {
+//         return `yous a small boy with a ${length} incher and ${girth} widther. Get bigger`;
+//     }
 // }
-
-// pageGone();
-
-// function test() {
-//     let i = 0;
-//     const intervalId = setInterval(() => {
-//         console.log(i.toFixed(2));
-//         i += 0.01;
-//         if (i >= 1) {
-//             clearInterval(intervalId);
-//         }
-//     }, 1000);
-// }
-
-// test();
-
+// console.log(checkLength(Math.floor(Math.random() * 17),Math.floor(Math.random() * 21)))
