@@ -25,6 +25,47 @@ h4, p{
     overflow: hidden;
 }
 
+.firstArea h1{
+    position: absolute;
+    z-index:2;
+    font-family: "Noto Sans Arabic", sans-serif;
+    color: red;
+    margin-left: 90rem;
+    margin-top: 10rem;
+    text-align: right;
+}
+
+#textChangerer{
+    font-size: 5rem;
+    margin-left: 12rem;
+    height: 100vh;
+    width: 20rem;
+    position: absolute;
+    z-index:2;
+    writing-mode: vertical-rl;
+    transition: transform 1000ms cubic-bezier(.13,.53,.38,.97);
+}
+
+#textChangerer:hover{
+    color: white;
+    transform: translateY(30%) translateX(90%);
+    transition: transform 1000ms cubic-bezier(.13,.53,.38,.97);
+}
+
+.pageLeaving[data-page="true"] > .firstArea > #textChangerer{
+    width: 80rem;
+    height: 10rem;
+    margin-top: 60vh;
+    transform: translateY(0) translateX(0);
+    transition: transform 1000ms cubic-bezier(.13,.53,.38,.97);
+}
+
+.pageLeaving[data-page="true"] > .firstArea > #textChangerer:hover{
+    color: white;
+    transform: translateY(0) translateX(0);
+    transition: transform 1000ms cubic-bezier(.13,.53,.38,.97);
+}
+
 .feets{
     width:100%;
     transform: translateY(0);
@@ -130,19 +171,6 @@ h4, p{
 
 .pageLeaving[data-page="true"] > .bottomAreaWidth {
     transform: translateY(0%) scale(1);
-}
-
-.bottomArea{
-    margin-bottom: 5rem;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    width:90%;
-    overflow-x: scroll;
-    height: 20rem;
-    gap:10px;
-    margin-top: 2rem;
 }
 
 .bottomArea::-webkit-scrollbar{
@@ -283,33 +311,38 @@ input:checked + label .description {
 }
 /*----------------------------------------------------------*/
 
-.startGame{
+.bottomArea{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width:90%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height:20rem;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.imagez{
     width:600px;
-    height:100%;
-    overflow: hidden;
+    height:20rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.startGame, .ThirdSectionAreaArea, .FourthSectionArea, .FifthSectionArea{    
+    /* overflow: hidden;
     display:flex;
     align-items: center;
-    flex: 0 0 auto;
+    flex: 0 0 auto; */
 }
 
-.washroom, .backrooms2{
-    width: 100%;
+.imagez{
+    cursor: pointer;
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
 }
-
-.ThirdSectionAreaArea, .FourthSectionArea{
-    width:600px;
-    height:100%;    
-    overflow: hidden;
-    display:flex;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
-.backrooms1{
-    width: 100%;
-}
-
-
 
 #video-container {
     display:none;
