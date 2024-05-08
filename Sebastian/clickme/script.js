@@ -80,7 +80,7 @@ class FollowCursor extends Cursor {
 
   const button = document.querySelector("button");
   button.addEventListener("click", (e) => {
-    button.innerHTML = "You Did It!";
+    button.innerHTML = "NAVIGATING...";
     button.style.backgroundColor = "#0dc900";
   });
 

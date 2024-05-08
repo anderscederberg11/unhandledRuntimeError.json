@@ -8,6 +8,9 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-image: url('/Sebastian/sebImages/IMG_6704.jpg');
+  background-position: center 90%;
+  background-size: 100%;
 }
 
 cursor {
@@ -23,7 +26,9 @@ cursor {
 
 button {
   border: none;
-  background-color: #a800c9;
+  background-image: url('/Sebastian/sebImages/IMG_7144.JPG');
+  background-position: center 90%;
+  background-size: 100%;
   padding: 4px 8px;
   border-radius: 10px;
   font-size: 2em;

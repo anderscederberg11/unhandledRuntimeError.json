@@ -1,39 +1,39 @@
-// let currentOpacity = parseFloat(localStorage.getItem('currentOpacity')) || 1; // Get current opacity from local storage or set it to 1
-// let opacityAnimationRunning = true; // Initially set to true to start the countdown animation
+let currentOpacity = parseFloat(localStorage.getItem('currentOpacity')) || 1; // Get current opacity from local storage or set it to 1
+let opacityAnimationRunning = true; // Initially set to true to start the countdown animation
 
-// function pageGone() {
-//     const byeByePage = document.querySelector('.pageLeaving');
-//     const intervalId = setInterval(() => {
-//         byeByePage.style.opacity = currentOpacity.toFixed(2);
-//         currentOpacity -= 0.01; // Decrement by 0.01 to reduce opacity
-//         localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage
-//         if (currentOpacity < -0.01) { // Stop when opacity reaches 0
-//             clearInterval(intervalId);
-//             opacityAnimationRunning = false; // Set the flag to false when animation ends
-//         }
-//     }, 750);
-// }
+function pageGone() {
+    const byeByePage = document.querySelector('.pageLeaving');
+    const intervalId = setInterval(() => {
+        byeByePage.style.opacity = currentOpacity.toFixed(2);
+        currentOpacity -= 0.01; // Decrement by 0.01 to reduce opacity
+        localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage
+        if (currentOpacity < -0.01) { // Stop when opacity reaches 0
+            clearInterval(intervalId);
+            opacityAnimationRunning = false; // Set the flag to false when animation ends
+        }
+    }, 750);
+}
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     pageGone();
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    pageGone();
+});
 
-// function increaseOpacity() {
-//     const byeByePage = document.querySelector('.pageLeaving');
-//     currentOpacity = parseFloat(byeByePage.style.opacity) + 0.1; // Increment the current opacity by 0.1
-//     if (currentOpacity > 1) {
-//         currentOpacity = 1; // Ensure opacity doesn't exceed 1
-//     }
-//     byeByePage.style.opacity = currentOpacity;
-//     localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage so that it dont reset on refresh
-//     console.log('New opacity:', currentOpacity);
+function increaseOpacity() {
+    const byeByePage = document.querySelector('.pageLeaving');
+    currentOpacity = parseFloat(byeByePage.style.opacity) + 0.1; // Increment the current opacity by 0.1
+    if (currentOpacity > 1) {
+        currentOpacity = 1; // Ensure opacity doesn't exceed 1
+    }
+    byeByePage.style.opacity = currentOpacity;
+    localStorage.setItem('currentOpacity', currentOpacity); // Store current opacity in local storage so that it dont reset on refresh
+    console.log('New opacity:', currentOpacity);
 
-//     // If animation is not running, start animation from the new opacity
-//     if (!opacityAnimationRunning) {
-//         pageGone();
-//         opacityAnimationRunning = true;
-//     }
-// }
+    // If animation is not running, start animation from the new opacity
+    if (!opacityAnimationRunning) {
+        pageGone();
+        opacityAnimationRunning = true;
+    }
+}
 
 const toggleFirstArea = () => {
     const pageLeaving = document.querySelector('.pageLeaving');
