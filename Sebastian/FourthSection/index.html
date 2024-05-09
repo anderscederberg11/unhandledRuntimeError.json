@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have Fun!</title>
+</head>
+<style>
+    body::-webkit-scrollbar{
+        display: none;
+    }
+    .container {
+        text-align: बायाँ;
+        z-index: 3;
+    }
+    .phone-input {
+        margin-top: 10px;
+    }
+    h1{
+        font-size: 100px;
+        width:80%;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: red;
+        margin:0;
+        z-index:2;
+    }
+    .bobo{
+        position: fixed;
+        z-index: 1;
+        left:17%;
+    }
+</style>
+</head>
+<body>
+    <h1>
+        3.141592653589793238462643383279502884197169399375105820974944592307
+    </h1>
+    <img src="/Sebastian/sebImages/scarypopup.png" class="bobo">
+    <div class="container">
+        <div id="phoneConfirmation">
+            <p id="question">Is <span id="phoneNumber">(XXX)-XXX-XXXX</span> your phone number? (y/n)</p>
+            <input id="answerInput" class="phone-input" type="text" maxlength="1">
+        </div>
+    </div>
+    <script>
+        function generatePhoneNumber() {
+            let firstPart = '(' + Math.floor(Math.random() * 1000).toString().padStart(3, '0') + ')';
+            let secondPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            let thirdPart = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            let phoneNumber = firstPart + '-' + secondPart + '-' + thirdPart;
+
+            return phoneNumber;
+        }
+
+
+
+        // Function to create new div with phone confirmation
+        function createPhoneConfirmation() {
+            const newPhoneNumber = generatePhoneNumber();
+            const div = document.createElement('div');
+            div.innerHTML = `<p>Is <span>${newPhoneNumber}</span> your phone number? (y/n)</p><input class="phone-input" type="text" maxlength="1">`;
+            document.body.appendChild(div);
+            const newInput = div.querySelector('input');
+            newInput.addEventListener('input', handleInput);
+            newInput.focus();
+        }
+
+        // Function to handle user input
+        function handleInput(event) {
+            const answer = event.target.value.toLowerCase();
+            if (answer === 'y') {
+                window.location.href = "/Sebastian/sebastian.html";
+            } else if (answer === 'n') {
+                createPhoneConfirmation(); // creates da divular with the new fone numbular
+            }
+        }
+
+        const initialInput = document.getElementById('answerInput');
+        initialInput.addEventListener('input', handleInput);
+
+        const initialPhoneNumber = generatePhoneNumber();
+        document.getElementById('phoneNumber').textContent = initialPhoneNumber;
+        initialInput.focus(); // Focus on da initial input field cuz why not
+    </script>
+</body>
+</html>

@@ -59,6 +59,14 @@ function getRandomNumber(min, max) {
 }
 
 //------------------------------------------
+const showButton = document.getElementById('generateNumber')
+const enterButton = document.getElementById('enterButtin')
+
+showButton.addEventListener('click', function(){
+    enterButton.style.display = 'inline-block'
+})
+
+//------------------------------------------
 const texts = [
     "私は昨日大量のピーナッツバターを食べました彼女は蛍光ピンクのドラゴンを乗って空を飛んでいるところを見ました。レモン味のアイスクリームにチョコレートソースとピーナッツをトッピングすると、幸せな気分になります", 
     "あの日、桜がピンク色のチョコレートと一緒に空を飛んでいました。寿司の雲が空を泳ぎ、たこ焼きの星が踊っていました。猫の声がカラフルなラーメンと一緒に響いていました。", 
