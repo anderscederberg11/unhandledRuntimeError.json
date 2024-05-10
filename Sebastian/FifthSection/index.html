@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP HELP HELP HELP HELP </title>
+</head>
+<style>
+    body{
+        background-image: url('/Sebastian/sebImages/Backrooms_model.jpg');
+        background-size: 100%;
+        background-position: center 0%;
+        width:100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin:0;
+    }
+    img{
+        z-index: 1;
+        position:absolute;
+        transform: translateX(1300%) translateY(300%) scale(0);
+    }
+    .popup{
+        transform: translateX(1000%) translateY(300%) scale(10);
+        transition: .2s;
+    }
+    .darkness{
+        width:100vw;
+        height: 100%;
+        position:absolute;
+        z-index: 2;
+        opacity: 0;
+    }
+    .flashesDark{
+        width:100vw;
+        height: 100%;
+        position:absolute;
+        z-index: 2;
+        opacity: 1;
+        transition: 10s;
+        mix-blend-mode: overlay;
+        background-image: url('/Sebastian/sebImages/eyes.gif');
+        background-size: 100%;
+        background-position: center 0%;
+    }
+</style>
+<body>
+    <img id="scary" src="/Sebastian/sebImages/scarypopup.png"/>
+    <div class="darkness"></div>
+    <audio id="myAudio" src="/Sebastian/Eli_Hong_-_When_The_Full_Moon_Comes_Everything_Stares_At_Dead_Whale_On_A_Shore.mp3" autoplay></audio>
+    <audio id="SFX" src="/Sebastian/backrooms-entity.mp3"></audio>
+    <script>
+        function switchClass() {
+            const scaryPopup = document.getElementById('scary');
+            scaryPopup.classList.remove('img');
+            scaryPopup.classList.add('popup');
+        }
+        setTimeout(switchClass, 20000);
+
+        function switchDank() {
+            const scaryPopup = document.getElementsByClassName('darkness')[0];
+            scaryPopup.classList.remove('darkness');
+            scaryPopup.classList.add('flashesDark');
+        }
+        setTimeout(switchDank, 3000);
+
+        var audio = document.getElementById("myAudio");
+        audio.currentTime = 320;
+        audio.volume = 0.5;
+        audio.play();
+
+        var SFX = document.getElementById('SFX')
+        function playSFX(){
+            SFX.volume = 1;
+            SFX.play()
+        }
+        setTimeout(playSFX,20000)
+
+        setTimeout(function() {
+            window.location.href = "../sebastian.html";
+        }, 30000);
+    </script>
+</body>
+</html>
