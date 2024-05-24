@@ -9,9 +9,7 @@ body {
     overflow: hidden;
 }
 
-body::-webkit-scrollbar{
-    display: none;
-}
+
 
 h4, p{
     font-family: sans-serif;
@@ -181,6 +179,10 @@ h4, p{
 
 .pageLeaving[data-page="true"] > .bottomAreaWidth {
     transform: translateY(0%) scale(1);
+}
+
+.bottomArea::-webkit-scrollbar{
+    display:none;
 }
 
 .enterPhoneNumber{
