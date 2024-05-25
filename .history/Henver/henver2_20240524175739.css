@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.haircutVro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;  
+    height: 700px; 
+}
+
+.haircutPic {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.toolbar {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cursor-image {
+    cursor: url('/Henver/imgs/scissors.png'), auto; 
+}

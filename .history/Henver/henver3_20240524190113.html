@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenverADHD</title>
+    <link rel="stylesheet" href="henver3.css">
+</head>
+<body>
+    <h1>ADHD Stimming Page</h1>
+  
+    <div class="buttons">
+      <button onclick="changeColor()">Change Color</button>
+      <button onclick="moveElement()">Move Element</button>
+      <button onclick="toggleVisibility()">Toggle Visibility</button>
+    </div>
+    
+    <div class="sliders">
+      <label for="slider1">Slider 1:</label>
+      <input type="range" id="slider1" min="0" max="100" value="50" onchange="adjustFontSize(this.value)">
+      <label for="slider2">Slider 2:</label>
+      <input type="range" id="slider2" min="0" max="100" value="50" onchange="adjustOpacity(this.value)">
+    </div>
+    
+    <div id="movableElement" class="movable-element"></div>
+
+<script>
+    function changeColor() {
+  const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+}
+
+function moveElement() {
+  const element = document.getElementById("movableElement");
+  const randomX = Math.random() * (window.innerWidth - element.offsetWidth);
+  const randomY = Math.random() * (window.innerHeight - element.offsetHeight);
+  element.style.left = randomX + "px";
+  element.style.top = randomY + "px";
+}
+
+function toggleVisibility() {
+  const element = document.getElementById("movableElement");
+  element.style.display = element.style.display === "none" ? "block" : "none";
+}
+
+function adjustFontSize(value) {
+  document.body.style.fontSize = value + "px";
+}
+
+function adjustOpacity(value) {
+  document.getElementById("movableElement").style.opacity = value / 100;
+}
+</script>
+</body>
+</html>

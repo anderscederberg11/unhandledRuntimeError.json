@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenverADHD</title>
+    <link rel="stylesheet" href="henver3.css">
+</head>
+<body>
+    <h1>ADHD Stimming Page</h1>
+  
+    <div class="buttons">
+      <button onclick="changeColor()">Color</button>
+      <button onclick="moveElement()">Move</button>
+      <button onclick="toggleVisibility()">Visibility</button>
+    </div>
+    
+    <div class="sliders">
+      <label for="slider1">TEXT SIZE:</label>
+      <input type="range" id="slider1" min="0" max="100" value="50" onchange="adjustFontSize(this.value)">
+      <label for="slider2">OPACITY</label>
+      <input type="range" id="slider2" min="0" max="100" value="50" onchange="adjustOpacity(this.value)">
+    </div>
+    
+    <div id="movableElement" class="movable-element"></div>
+
+    <div class="floating-paragraph">
+        <p>Attention deficit hyperactivity disorder (ADHD) is a neurodevelopmental disorder characterized by persistent patterns of inattention, hyperactivity, and impulsivity that significantly interfere with daily functioning and development. Individuals with ADHD may struggle to sustain attention on tasks or activities, often becoming easily distracted and frequently shifting from one task to another. Hyperactivity manifests as excessive restlessness, fidgeting, and difficulty engaging in quiet activities. Impulsivity can lead to acting without considering consequences, interrupting others, and difficulty waiting or taking turns. ADHD affects people of all ages and can impact various aspects of life, including academic performance, work productivity, relationships, and self-esteem. Despite its challenges, individuals with ADHD often exhibit creativity, energy, and unique perspectives, and with appropriate support and strategies, they can thrive in various domains of life.</p>
+      </div>
+
+      <div id="minigame-container" class="minigame-container">
+        <button id="minigame-button" onclick="showRandomMinigame()">Play Minigame</button>
+        <div id="minigame"></div>
+      </div>
+      <div id="minigame-container" class="minigame-container">
+        <button id="minigame-button" onclick="startClickerGame()">Play Clicker Game</button>
+        <div id="clicker-game"></div>
+      </div>
+    
+<script>
+    function changeColor() {
+  const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+}
+
+function moveElement() {
+  const element = document.getElementById("movableElement");
+  const randomX = Math.random() * (window.innerWidth - element.offsetWidth);
+  const randomY = Math.random() * (window.innerHeight - element.offsetHeight);
+  element.style.left = randomX + "px";
+  element.style.top = randomY + "px";
+}
+
+function toggleVisibility() {
+  const element = document.getElementById("movableElement");
+  element.style.display = element.style.display === "none" ? "block" : "none";
+}
+
+function adjustFontSize(value) {
+  document.body.style.fontSize = value + "px";
+}
+
+function adjustOpacity(value) {
+  document.getElementById("movableElement").style.opacity = value / 100;
+}
+
+</script>
+</body>
+</html>

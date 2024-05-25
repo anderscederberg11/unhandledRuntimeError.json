@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaircutHenver</title>
+    <link rel="stylesheet" href="henver2.css">
+</head>
+<body>
+    <div class="haircutVro">
+        <img class="haircutPic" src="/Henver/imgs/haircutbro.jpeg" alt="kid in barber chair">
+    </div>
+    <div class="toolbar">
+        <button id="scissorsBtn">Scissors</button>
+        <button id="clippersBtn">Clippers</button>
+        <button id="alcoholBtn">Alcohol</button>
+    </div>
+        
+    <script>
+        // Set the cursor to the Scissors image when the page loads
+        document.body.style.cursor = 'url("/Henver/imgs/Scissors.png"), auto';
+    
+        const scissorsBtn = document.getElementById('scissorsBtn');
+        const clippersBtn = document.getElementById('clippersBtn');
+        const alcoholBtn = document.getElementById('alcoholBtn');
+    
+        scissorsBtn.addEventListener('click', () => {
+            console.log("Scissors button clicked");
+            document.body.style.cursor = 'url("/Henver/imgs/Scissors.png"), auto';
+        });
+    
+        clippersBtn.addEventListener('click', () => {
+            console.log("Clippers button clicked");
+            document.body.style.cursor = 'url("/Henver/imgs/clippers.png"), auto';
+        });
+    
+        alcoholBtn.addEventListener('click', () => {
+            console.log("Alcohol button clicked");
+            document.body.style.cursor = 'url("/Henver/imgs/alcoholspray.png"), auto';
+        });
+    </script>
+</body>
+</html>

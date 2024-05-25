@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenverHub</title>
+    <link rel="stylesheet" href="henver.css">
+</head>
+<body>
+    <!--  nav bar / header -->
+    <nav>
+        <h1><img src="/Henver/imgs/Henver-Hub.png" alt="HenverHub Logo"></h1>
+    </nav>
+
+    <div id="video-container">
+        <div id="video-player" onclick="playVideo()">
+            <img id="video-thumbnail" src="/Henver/imgs/funnyMArcoo.jpeg" alt="AYO Marcooo">
+        </div>
+        <button id="redirect-button" onclick="redirectToAnotherPage()">Continue Experience</button>
+        <!-- my icons -->
+        <div id="icon-list">
+            <img class="icon" src="/Henver/imgs/send.webp" alt="Send">
+            <img class="icon" src="/Henver/imgs/download.png" alt="Download">
+            <img class="icon" src="/Henver/imgs/like.png" alt="Like">
+        </div>
+    </div>
+        <!-- video player tutorial https://stackoverflow.com/questions/54195631/how-to-make-a-self-contained-video-player -->
+    <script>
+        function playVideo() {
+            var videoUrl = "/Henver/imgs/dog.mp4";
+            var videoElement = document.createElement("video");
+            videoElement.src = videoUrl;
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            document.getElementById("video-player").innerHTML = "";
+            document.getElementById("video-player").appendChild(videoElement);
+        }
+        function redirectToAnotherPage() {
+            window.location.href = "/Henver/henver2.html";
+        }
+        
+    </script>
+</body>
+</html>

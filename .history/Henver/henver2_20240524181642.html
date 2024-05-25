@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaircutHenver</title>
+    <link rel="stylesheet" href="henver2.css">
+</head>
+<body>
+    <div class="haircutVro">
+        <img class="haircutPic" src="/Henver/imgs/haircutbro.jpeg" alt="kid in barber chair">
+    </div>
+    <div class="toolbar">
+        <button id="scissorsBtn">Scissors</button>
+        <button id="clippersBtn">Clippers</button>
+        <button id="alcoholBtn">Alcohol</button>
+    </div>
+        
+    <script>
+        // Get references to the buttons
+        const scissorsBtn = document.getElementById('scissorsBtn');
+        const clippersBtn = document.getElementById('clippersBtn');
+        const alcoholBtn = document.getElementById('alcoholBtn');
+
+        // Add event listeners to each button
+        scissorsBtn.addEventListener('click', () => {
+            document.body.style.cursor = 'url(scissors.png), auto';
+        });
+
+        clippersBtn.addEventListener('click', () => {
+            document.body.style.cursor = 'url(clippers.png), auto';
+        });
+
+        alcoholBtn.addEventListener('click', () => {
+            document.body.style.cursor = 'url(alcohol.png), auto';
+        });
+    </script>
+</body>
+</html>

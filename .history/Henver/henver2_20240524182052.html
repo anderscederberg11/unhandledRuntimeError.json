@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaircutHenver</title>
+    <link rel="stylesheet" href="henver2.css">
+    <style>
+        .scissors-cursor {
+            cursor: url('/Henver/imgs/Scissors.png'), auto;
+        }
+        .clippers-cursor {
+            cursor: url('/Henver/imgs/clippers.png'), auto;
+        }
+        .alcohol-cursor {
+            cursor: url('/Henver/imgs/alcoholspray.png'), auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="haircutVro">
+        <img class="haircutPic" src="/Henver/imgs/haircutbro.jpeg" alt="kid in barber chair">
+    </div>
+    <div class="toolbar">
+        <button id="scissorsBtn">Scissors</button>
+        <button id="clippersBtn">Clippers</button>
+        <button id="alcoholBtn">Alcohol</button>
+    </div>
+        
+    <script>
+        // Get references to the buttons
+        const scissorsBtn = document.getElementById('scissorsBtn');
+        const clippersBtn = document.getElementById('clippersBtn');
+        const alcoholBtn = document.getElementById('alcoholBtn');
+    
+        // Add event listeners to each button
+        scissorsBtn.addEventListener('click', () => {
+            document.body.classList.remove('clippers-cursor', 'alcohol-cursor');
+            document.body.classList.add('scissors-cursor');
+        });
+    
+        clippersBtn.addEventListener('click', () => {
+            document.body.classList.remove('scissors-cursor', 'alcohol-cursor');
+            document.body.classList.add('clippers-cursor');
+        });
+    
+        alcoholBtn.addEventListener('click', () => {
+            document.body.classList.remove('scissors-cursor', 'clippers-cursor');
+            document.body.classList.add('alcohol-cursor');
+        });
+    </script>
+</body>
+</html>

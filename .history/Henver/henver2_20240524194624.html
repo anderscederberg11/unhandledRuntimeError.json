@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaircutHenver</title>
+    <link rel="stylesheet" href="henver2.css">
+    <style>
+    body {
+    background-image: url('/Henver/imgs/gtabarber.webp'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+        }
+    </style>
+</head>
+<body>    
+    <audio id="background-music" src="/Henver/imgs/fisherr.mp3" autoplay></audio>
+    <div class="haircutVro">
+        <img class="haircutPic" src="/Henver/imgs/haircutbro.jpeg" alt="kid in barber chair">
+    </div>
+    <div class="quiz-container">
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+        <div id="progress"></div>
+        <button id="play-sound-btn" style="display: none;" onclick="playSound()">Spray</button>
+        <button id="redirect-btn" style="display: none;" onclick="redirect()">Continue Experience</button>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "Is bro fresh?",
+                options: ["nah", "kinda", "fresh", "delicious"],
+                answer: "fresh"
+            },
+            {
+                question: "Is this Kai Cenat?",
+                options: ["nah", "yes", "fanum", "who?"],
+                answer: "nah"
+            },
+            {
+                question: "He pulls all the girls with his ___ ?",
+                options: ["Swagger", "Game", "Rizz"],
+                answer: "Rizz"
+            },
+            {
+                question: "What is good tongue posture called??",
+                options: ["lofting", "gleeking", "mewing", "NaCl"],
+                answer: "mewing"
+            },
+            {
+                question: "Should we spray bro down?",
+                options: ["yes", "no"],
+                answer: "yes"
+            }
+        ];
+
+        let currentQuestion = 0;
+        const progress = document.getElementById("progress");
+        const questionDiv = document.getElementById("question");
+        const optionsDiv = document.getElementById("options");
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            questionDiv.textContent = q.question;
+            optionsDiv.innerHTML = "";
+            q.options.forEach((opt) => {
+                const btn = document.createElement("button");
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(opt);
+                optionsDiv.appendChild(btn);
+            });
+            updateProgress();
+        }
+
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestion].answer) {
+                if (currentQuestion === questions.length - 1) {
+                    document.getElementById("play-sound-btn").style.display = "inline-block";
+                    document.getElementById("redirect-btn").style.display = "inline-block";
+                }
+                currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const percent = ((currentQuestion + 1) / questions.length) * 100;
+            progress.style.width = percent + "%";
+        }
+
+        function playSound() {
+            const audio = new Audio('/Henver/imgs/Its just alcohol.mp3');
+        audio.play();
+        }
+
+        function redirect() {
+            window.location.href = "henver3.html";
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

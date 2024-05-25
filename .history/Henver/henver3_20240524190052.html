@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenverADHD</title>
+    <link rel="stylesheet" href="henver3.css">
+</head>
+<body>
+    <h1>ADHD Stimming Page</h1>
+  
+    <div class="buttons">
+      <button onclick="changeColor()">Change Color</button>
+      <button onclick="moveElement()">Move Element</button>
+      <button onclick="toggleVisibility()">Toggle Visibility</button>
+    </div>
+    
+    <div class="sliders">
+      <label for="slider1">Slider 1:</label>
+      <input type="range" id="slider1" min="0" max="100" value="50" onchange="adjustFontSize(this.value)">
+      <label for="slider2">Slider 2:</label>
+      <input type="range" id="slider2" min="0" max="100" value="50" onchange="adjustOpacity(this.value)">
+    </div>
+    
+    <div id="movableElement" class="movable-element"></div>
+</body>
+</html>
