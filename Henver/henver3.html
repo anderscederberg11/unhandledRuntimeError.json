@@ -36,7 +36,11 @@
   
       <p>Score: <span id="score">0</span></p>
 
-      <button onclick="redirectToAnotherPage()">Forward</button>
+      <a href="/index.html"
+       style=
+      "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 30px;
+      text-decoration: none; color: aquamarine;">Forward</a>
 
 <script>
     function changeColor() {
@@ -93,10 +97,6 @@ function adjustFontSize(value) {
 function adjustOpacity(value) {
   document.getElementById("movableElement").style.opacity = value / 100;
 }
-
-function redirect() {
-            window.location.href = "index.html";
-        }
 
 function whackMole() {
   event.target.style.display = "none";
